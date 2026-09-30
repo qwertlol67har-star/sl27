@@ -210,6 +210,7 @@ CREATE TABLE IF NOT EXISTS submissions (
     caption TEXT,
     status TEXT DEFAULT 'sent',
     created_at TEXT
+)
 """)
 
 
@@ -2618,9 +2619,6 @@ async def accept_withdraw(
     if request["club_number"] == 1:
 
         try:
-
-            # Получаем storage через FSMContext вручную
-            # для конкретного пользователя.
 
             from aiogram.fsm.storage.base import StorageKey
 
